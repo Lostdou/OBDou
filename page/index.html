@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OBDou - Utilidad para OBS</title>
+    <link rel="icon" href="common/icon.ico" type="image/x-icon">
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    
+    <style>
+        :root {
+            --bg-color: #f3f4f6;
+            --text-main: #1f2937;
+            --text-muted: #6b7280;
+            --card-bg: #ffffff;
+            --primary: #8b5cf6;
+            --primary-hover: #7c3aed;
+            --secondary: #e5e7eb;
+            --secondary-hover: #d1d5db;
+        }
+        
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+        }
+        
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            padding: 2rem;
+        }
+        
+        .container {
+            max-width: 900px;
+            width: 100%;
+            text-align: center;
+            margin-top: 4rem;
+        }
+        
+        h1 {
+            font-size: 3rem;
+            font-weight: 800;
+            margin-bottom: 1rem;
+            letter-spacing: -0.05em;
+            color: var(--text-main);
+        }
+        
+        .subtitle {
+            font-size: 1.125rem;
+            color: var(--text-muted);
+            margin-bottom: 3rem;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+        
+        .card {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: left;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            display: inline-block;
+            color: var(--primary);
+        }
+        
+        .card-title {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+        }
+        
+        .card-text {
+            font-size: 0.95rem;
+            color: var(--text-muted);
+            line-height: 1.5;
+        }
+        
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            text-decoration: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 9999px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.2s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary);
+            color: white;
+            box-shadow: 0 4px 14px 0 rgba(139, 92, 246, 0.39);
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--primary-hover);
+            box-shadow: 0 6px 20px rgba(139, 92, 246, 0.23);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary);
+            color: var(--text-main);
+        }
+        
+        .btn-secondary:hover {
+            background-color: var(--secondary-hover);
+        }
+        
+        footer {
+            margin-top: 4rem;
+            font-size: 0.85rem;
+            color: var(--text-muted);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>OBDou</h1>
+        <p class="subtitle">Una utilidad ligera que conecta tu transmisión de OBS con herramientas interactivas automatizadas.</p>
+        
+        <div class="features-grid">
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-robot"></i>
+                </div>
+                <h3 class="card-title">Avatar Reactivo</h3>
+                <p class="card-text">Un personaje en croma que reacciona en tiempo real, moviendo el brazo hacia tu mouse y cambiando el teclado según lo que escribes.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-comment-dots"></i>
+                </div>
+                <h3 class="card-title">TTS Inteligente</h3>
+                <p class="card-text">Conecta automáticamente con tu chat de Twitch y lee en voz alta los mensajes de tus espectadores usando comandos personalizables.</p>
+            </div>
+            
+            <div class="card">
+                <div class="card-icon">
+                    <i class="fa-solid fa-music"></i>
+                </div>
+                <h3 class="card-title">Widget de Música</h3>
+                <p class="card-text">Un diseño web moderno y fluido para OBS que extrae los colores de la portada y muestra en vivo lo que escuchas vía Last.fm.</p>
+            </div>
+        </div>
+        
+        <div class="actions">
+            <a href="https://github.com/lostdou/OBDou" target="_blank" class="btn btn-primary">
+                <i class="fa-brands fa-github"></i> Ver en GitHub
+            </a>
+            <a href="https://lostdou.dev" target="_blank" class="btn btn-secondary">
+                <i class="fa-solid fa-code"></i> Por lostdou
+            </a>
+        </div>
+    </div>
+</body>
+</html>
